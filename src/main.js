@@ -28,7 +28,7 @@ return res.json({len:grouped.length,grouped})
 })
 // console.log('topics grouped: ',grouped)
 
-const port = process.env.Port | DEV_PORT;
+const port = process.env.PORT | DEV_PORT;
 // console.log('port: ',port, devPort)
 
 
