@@ -15,7 +15,9 @@ const saveQuestion = async(req, res) => {
  * @returns 
  */
 const searchQuestion = async (req, res) => {
-    const query = req.query.q;
+    let query = req.query.q;
+    query = formatQuery(query);
+    console.log('q: ', query);
     const topics = await(await topicModel.find({ path: { $regex: query, $options: 'i' } })).map((topic) => topic['topic']);
     const questions = await questionModel.find({ annotations: { $in: topics } },{questionNo:1,_id:0});
      
@@ -29,7 +31,8 @@ const searchQuestion = async (req, res) => {
  * @returns 
  */
 const query =async (req, res) => {
-    const query = req.query.q; 
+    let query = req.query.q; 
+    query = formatQuery(query);
     let topics = await (await topicModel.find({
         $or: [{ path: { $regex: query, $options: 'i' } },
         { topic: query }]
@@ -37,8 +40,24 @@ const query =async (req, res) => {
     const questions = await questionModel.find({annotations: { $in: topics }},{questionNo:1,_id:0}); 
     return res.json(questions);
 }
-
-
+/**
+ * Format string to remove leading and ending quote(") if its exist in query
+ * @param {*} query 
+ * @returns 
+ */
+const formatQuery = (query) => {
+     if (query.charAt(0) == '"' && query.charAt(query.length-1) == '"') {
+        console.log("starts with quote");
+         query = query.slice(1, -1);
+    }
+    if (query.charAt(0) == '"' && query.charAt(query.length-1) !== '"') {
+        query = query.slice(1);
+    }
+    if (query.charAt(0) !== '"' && query.charAt(query.length - 1) == '"') {
+        query = query.slice(0, -1);
+    }
+    return query;
+}
 
 module.exports.saveQuestion = saveQuestion;
 module.exports.searchQuestion = searchQuestion;
