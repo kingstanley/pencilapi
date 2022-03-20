@@ -1,6 +1,155 @@
 # pencilapi
 An api for backend challenge
+
+Note: In addition to the specified /search route, I have created a query route for a situation were both the questions with the topic and questions with decendants of the topic in their annotation should be returned.
+
+The /search route only returns questions with any of the decendants of the queried topic in their annotations list.
+
+ Examples: https://pencilapi.herokuapp.com/search?q="Biological Molecules"
  
+ The result will be: [
+	{
+		"questionNo": 37
+	},
+	{
+		"questionNo": 111
+	},
+	{
+		"questionNo": 116
+	},
+	{
+		"questionNo": 134
+	},
+	{
+		"questionNo": 182
+	},
+	{
+		"questionNo": 10
+	},
+	{
+		"questionNo": 19
+	},
+	{
+		"questionNo": 55
+	},
+	{
+		"questionNo": 77
+	},
+	{
+		"questionNo": 127
+	},
+	{
+		"questionNo": 5
+	},
+	{
+		"questionNo": 33
+	},
+	{
+		"questionNo": 38
+	},
+	{
+		"questionNo": 67
+	},
+	{
+		"questionNo": 120
+	},
+	{
+		"questionNo": 197
+	},
+	{
+		"questionNo": 61
+	},
+	{
+		"questionNo": 107
+	},
+	{
+		"questionNo": 129
+	},
+	{
+		"questionNo": 166
+	},
+	{
+		"questionNo": 188
+	},
+	{
+		"questionNo": 45
+	},
+	{
+		"questionNo": 112
+	},
+	{
+		"questionNo": 178
+	},
+	{
+		"questionNo": 183
+	},
+	{
+		"questionNo": 153
+	},
+	{
+		"questionNo": 9
+	},
+	{
+		"questionNo": 76
+	},
+	{
+		"questionNo": 174
+	},
+	{
+		"questionNo": 26
+	},
+	{
+		"questionNo": 64
+	},
+	{
+		"questionNo": 181
+	},
+	{
+		"questionNo": 20
+	},
+	{
+		"questionNo": 24
+	},
+	{
+		"questionNo": 78
+	},
+	{
+		"questionNo": 171
+	},
+	{
+		"questionNo": 14
+	},
+	{
+		"questionNo": 92
+	},
+	{
+		"questionNo": 128
+	},
+	{
+		"questionNo": 2
+	},
+	{
+		"questionNo": 56
+	},
+	{
+		"questionNo": 199
+	},
+	{
+		"questionNo": 66
+	},
+	{
+		"questionNo": 146
+	},
+	{
+		"questionNo": 176
+	}
+]
+
+However using https://pencilapi.herokuapp.com/search?q="Biological Molecules"
+instead result to more result because both questions with the annotation of the topic "Biological Molecules" and the ones with any of the sub topics under "Biological Molecules" are all returned
+While in the previous case only questions with any of the sub topics under "Biological Molecules" are returned.
+
+
 The goal of this assignment is to store and create an index over question objects in MongoDB, and write a NodeJS + Express based server that exposes a RESTful API to query 
 
 ....

@@ -11,6 +11,6 @@ router.post('/savequestion', (req, res) => {
     return saveQuestion(req, res);
 })
 router.get('/', (req, res) => {
-     return res.json({message:'Welcome. To search visit /search?q=this should be your search topic'})
+     return res.json({message:'Welcome. To test the search route try this: "https://pencilapi.herokuapp.com/search?q=Biological Molecules"'})
  })
 module.exports = router;
