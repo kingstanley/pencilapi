@@ -46,17 +46,17 @@ const query =async (req, res) => {
  * @returns 
  */
 const formatQuery = (query) => {
-     if ((query.charAt(0) == '"' || query.charAt(0) == "'") && (query.charAt(query.length-1) == '"' || query.charAt(query.length-1) == "'")) {
-        console.log("starts with quote");
+     if ((query.charAt(0) == '"' ||query.charAt(0) == "'") && (query.charAt(query.length-1) == '"'||query.charAt(query.length-1) == "'")) {
+        // console.log("starts with quote");
          query = query.slice(1, -1);
     }
-    if ((query.charAt(0) == '"'||query.charAt(0) == "'") && (query.charAt(query.length-1) !== '"')||query.charAt(query.length-1) !== "'") {
+    if ((query.charAt(0) == '"' ||query.charAt(0) == "'") && (query.charAt(query.length-1) !== '"'||query.charAt(query.length-1) !== "'")) {
         query = query.slice(1);
     }
-    if ((query.charAt(0) !== '"'||query.charAt(0) !== "'") && (query.charAt(query.length - 1) == '"'||query.charAt(query.length - 1) == "'")) {
+    if ((query.charAt(0) !== '"' ||query.charAt(0) !== "'") && (query.charAt(query.length - 1) == '"'|| query.charAt(query.length - 1) == "'")) {
         query = query.slice(0, -1);
     }
-    return query;
+    return query.trim();
 }
 
 module.exports.saveQuestion = saveQuestion;
