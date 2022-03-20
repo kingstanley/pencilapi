@@ -37,7 +37,14 @@ const query =async (req, res) => {
     const questions = await questionModel.find({annotations: { $in: topics }},{questionNo:1,_id:0}); 
     return res.json(questions);
 }
+
+const getAllTopics = async(req, res) => {
+    const topics = await topicModel.find({});
+        return res.json(topics);
+}
+
 module.exports.saveQuestion = saveQuestion;
 module.exports.searchQuestion = searchQuestion;
-module.exports.query = query; 
+module.exports.query = query;
+module.exports.getAllTopics = getAllTopics;
  

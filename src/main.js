@@ -23,9 +23,7 @@ app.use('/topic', topicRoute);
          console.log("Mongo Error: ", error.message)
     }
 })();
-app.get('/', (req, res) => { 
-return res.json({len:grouped.length,grouped})
-})
+ 
 // console.log('topics grouped: ',grouped)
 
 const port = process.env.PORT | DEV_PORT;
