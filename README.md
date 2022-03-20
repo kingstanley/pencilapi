@@ -5,7 +5,7 @@ Note: In addition to the specified /search route, I have created a query route f
 
 The /search route only returns questions with any of the decendants of the queried topic in their annotations list.
 
- Examples: https://pencilapi.herokuapp.com/search?q="Biological Molecules"
+ Examples: https://pencilapi.herokuapp.com/search?q='Biological Molecules'
  
  The result will be: [
 	{
