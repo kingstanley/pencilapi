@@ -26,7 +26,7 @@ app.use('/topic', topicRoute);
  
 // console.log('topics grouped: ',grouped)
 
-const port = process.env.PORT | DEV_PORT;
+const port = process.env.PORT || DEV_PORT;
 // console.log('port: ',port, devPort)
 
 
