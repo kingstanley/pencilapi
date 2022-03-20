@@ -1,5 +1,10 @@
 # pencilapi
 An api for backend challenge
+
+Note: In addition to the specified /search route, I have created a query route for a situation were both the questions with the topic and questions with decendants of the topic in their annotation should be returned.
+
+The /search route only returns questions with any of the decendants of the queried topic in their annotations list.
+
  
 The goal of this assignment is to store and create an index over question objects in MongoDB, and write a NodeJS + Express based server that exposes a RESTful API to query 
 
