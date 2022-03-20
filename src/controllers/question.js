@@ -38,13 +38,9 @@ const query =async (req, res) => {
     return res.json(questions);
 }
 
-const getAllTopics = async(req, res) => {
-    const topics = await topicModel.find({});
-        return res.json(topics);
-}
+
 
 module.exports.saveQuestion = saveQuestion;
 module.exports.searchQuestion = searchQuestion;
-module.exports.query = query;
-module.exports.getAllTopics = getAllTopics;
+module.exports.query = query; 
  

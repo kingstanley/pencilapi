@@ -10,7 +10,5 @@ router.get('/query', (req, res) => {
 router.post('/savequestion', (req, res) => {
     return saveQuestion(req, res);
 })
-router.get('/', (req, res) => {
-    return getAllTopics(req,res);
-})
+ 
 module.exports = router;
