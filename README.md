@@ -5,7 +5,7 @@ Note: In addition to the specified /search route, I have created a query route f
 
 The /search route only returns questions with any of the decendants of the queried topic in their annotations list.
 
- Examples: https://pencilapi.herokuapp.com/search?q="Biological Molecules"
+ Examples: https://pencilapi.herokuapp.com/search?q='Biological Molecules'
  
  The result will be: [
 	{
@@ -145,7 +145,7 @@ The /search route only returns questions with any of the decendants of the queri
 	}
 ]
 
-However using https://pencilapi.herokuapp.com/search?q="Biological Molecules"
+However using https://pencilapi.herokuapp.com/query?q="Biological Molecules"
 instead result to more result because both questions with the annotation of the topic "Biological Molecules" and the ones with any of the sub topics under "Biological Molecules" are all returned
 While in the previous case only questions with any of the sub topics under "Biological Molecules" are returned.
 
