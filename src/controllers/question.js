@@ -56,7 +56,7 @@ const formatQuery = (query) => {
     if ((query.charAt(0) !== '"' ||query.charAt(0) !== "'") && (query.charAt(query.length - 1) == '"'|| query.charAt(query.length - 1) == "'")) {
         query = query.slice(0, -1);
     }
-    return query.trim();
+    return ","+query.trim()+",";
 }
 
 module.exports.saveQuestion = saveQuestion;
