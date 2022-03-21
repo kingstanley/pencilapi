@@ -1,6 +1,6 @@
 const express = require('express'); 
 const mongoose = require('mongoose');
-const { DEV_PORT, MONGO_URL } = require('./environment');
+const { DEV_PORT } = require('./environment');
 const questionRoute = require('./routs/question');
 const topicRoute = require('./routs/topic'); 
 
