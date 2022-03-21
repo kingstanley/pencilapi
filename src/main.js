@@ -18,6 +18,8 @@ app.use('/topic', topicRoute);
 
 (async () => {
     try {
+        const MONGO_URL = process.env.MONGO_URL;
+        console.log("mongoUrl: ",MONGO_URL)
         mongoose.connect(`${MONGO_URL}`).then(con =>{console.log("Connected to MongoDB: ")});
     } catch (error) {
          console.log("Mongo Error: ", error.message)
